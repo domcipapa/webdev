@@ -1,0 +1,119 @@
+<!DOCTYPE html> <!-- HTML5 doctype declaration -->
+<html lang="hu"> <!-- Sets the language to Hungarian -->
+<head>
+    <meta charset="UTF-8"> <!-- Character encoding -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Makes page responsive -->
+    <title>Minta Weboldal</title> <!-- Page title shown in browser tab -->
+    <link rel="stylesheet" href="style.css"> <!-- External CSS file link -->
+</head>
+
+<body>
+    <!-- Navigation bar with internal links -->
+    <nav>
+        <ul>
+            <li><a href="#fooldal">Főoldal</a></li>
+            <li><a href="#rolunk">Rólunk</a></li>
+            <li><a href="#tablazat">Táblázat</a></li>
+            <li><a href="#kepek">Képek</a></li>
+            <li><a href="#kapcsolat">Kapcsolat</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Section: Home -->
+        <section id="fooldal">
+            <h1>Minta Weboldal</h1>
+            <p>
+                Ez egy <b>egyszerű</b> példa <i>HTML</i> és <u>CSS</u> használatára. <br>
+                Az oldalon megtalálhatóak <sup>felső</sup> és <sub>alsó</sub> indexek is.
+            </p>
+        </section>
+
+        <!-- Section: About Us -->
+        <section id="rolunk">
+            <h2>Rólunk</h2>
+            <div class="info-box">
+                <!-- Paragraph with highlighted span -->
+                <p>Mi egy <span class="kiemelt">webfejlesztő csapat</span> vagyunk, akik modern weboldalakat készítenek.</p>
+                <!-- Quoted text styled separately -->
+                <p class="quote">„A jó dizájn nem az, amit hozzáteszel, hanem amit elhagysz.”</p>
+            </div>
+        </section>
+
+        <!-- Section: Table Example -->
+        <section id="tablazat">
+            <h2>Táblázat példa</h2>
+            <table>
+                <tr>
+                    <!-- Table header row -->
+                    <th>Név</th>
+                    <th colspan="2">Elérhetőség</th> <!-- Merges two columns -->
+                </tr>
+                <tr>
+                    <td>Kiss Anna</td>
+                    <td>Email</td>
+                    <td>anna@pelda.hu</td>
+                </tr>
+                <tr>
+                    <!-- rowspan merges this cell vertically -->
+                    <td rowspan="2">Nagy Béla</td>
+                    <td>Telefon</td>
+                    <td>+36 30 555 1234</td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>bela@pelda.hu</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- Section: Lists -->
+        <section id="listak">
+            <h2>Listák</h2>
+            <h3>Felsorolás:</h3>
+            <ul> <!-- Unordered list -->
+                <li>HTML alapok</li>
+                <li>CSS stílusok</li>
+                <li>JavaScript interakciók</li>
+            </ul>
+
+            <h3>Számozott lista:</h3>
+            <ol> <!-- Ordered list -->
+                <li>Első lépés</li>
+                <li>Második lépés</li>
+                <li>Harmadik lépés</li>
+            </ol>
+        </section>
+
+        <!-- Section: Images and Video -->
+        <section id="kepek">
+            <h2>Képek és Videó</h2>
+            <figure>
+                <!-- Placeholder image with caption -->
+                <img src="https://picsum.photos/300/200?random=1" alt="Minta kép">
+                <figcaption>Minta kép egy weboldalhoz</figcaption>
+            </figure>
+
+            <!-- Embedded video -->
+            <video width="320" height="240" controls>
+                <source src="sample.mp4" type="video/mp4">
+                A böngésződ nem támogatja a videó lejátszást.
+            </video>
+        </section>
+
+        <!-- Section: Contact -->
+        <section id="kapcsolat">
+            <h2>Kapcsolat</h2>
+            <!-- Email link -->
+            <p>Írj nekünk a <a href="mailto:info@pelda.hu">info@pelda.hu</a> címre.</p>
+            <!-- Bookmark link to top -->
+            <p><a href="#fooldal">Ugrás a tetejére</a></p>
+        </section>
+    </main>
+
+    <!-- Footer section -->
+    <footer>
+        <p>&copy; 2025 Minta Weboldal. Minden jog fenntartva.</p>
+    </footer>
+</body>
+</html>

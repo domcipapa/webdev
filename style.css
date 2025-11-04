@@ -1,0 +1,124 @@
+/* --- Alap formázás (tag szelektorok) --- */
+body {
+    font-family: Arial, sans-serif;   /* Betűtípus beállítása */
+    line-height: 1.6;                 /* Sorköz */
+    margin: 0;                        /* Oldal külső margó eltávolítása */
+    background-color: #f4f4f4;        /* Háttérszín */
+    color: #333;                      /* Alap szövegszín */
+}
+
+h1, h2 {
+    color: #0055aa;                   /* Címsorok színe */
+}
+
+/* --- Navigáció --- */
+nav {
+    background: #333;                 /* Sötétszürke háttér */
+    padding: 0.5rem;                  /* Belső margó */
+}
+
+nav ul {
+    list-style: none;                 /* Felsorolásjel eltávolítása */
+    margin: 0;                        /* Külső margó eltávolítása */
+    padding: 0;                       /* Belső margó eltávolítása */
+    display: flex;                    /* Sorba rendezi az elemeket */
+}
+
+nav li {
+    margin-right: 20px;               /* Köz a menüpontok között */
+}
+
+nav a {
+    color: white;                     /* Linkek színe */
+    text-decoration: none;            /* Aláhúzás eltávolítása */
+}
+
+nav a:hover {
+    text-decoration: underline;       /* Aláhúzás megjelenítése hover esetén */
+}
+
+/* --- Szövegrészek és box-ok --- */
+.info-box {
+    background: white;                /* Fehér háttér */
+    padding: 1rem;                    /* Belső margó */
+    border: 1px solid #ccc;           /* Szürke szegély */
+    border-radius: 10px;              /* Lekerekített sarkok */
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.1); /* Árnyék hatás */
+    margin-bottom: 1rem;              /* Alsó margó */
+}
+
+.kiemelt {
+    font-weight: bold;                /* Félkövér szöveg */
+    color: darkred;                   /* Sötétpiros szín */
+}
+
+.quote {
+    font-style: italic;               /* Dőlt betű */
+    text-align: center;               /* Középre igazítás */
+}
+
+/* --- Táblázat formázása --- */
+table {
+    width: 100%;                      /* Táblázat teljes szélesség */
+    border-collapse: collapse;        /* Dupla vonalak összevonása */
+    margin-top: 1rem;                 /* Felső margó */
+}
+
+th, td {
+    border: 1px solid #999;           /* Cellák szegélye */
+    padding: 8px;                     /* Cellák belső margója */
+    text-align: left;                 /* Balra igazítás */
+}
+
+th {
+    background-color: #eee;           /* Fejlécek háttérszíne */
+}
+
+/* --- Listák --- */
+ul, ol {
+    margin-left: 20px;                /* Behúzás bal oldalon */
+}
+
+/* --- Képek és videók --- */
+figure {
+    text-align: center;               /* Tartalom középre igazítása */
+}
+
+img {
+    border: 2px solid #ccc;           /* Szürke keret */
+    border-radius: 8px;               /* Lekerekített sarkok */
+}
+
+figcaption {
+    font-size: 0.9em;                 /* Kisebb betűméret */
+    color: #555;                      /* Szürkésebb szín */
+}
+
+/* --- Lábjegyzet --- */
+footer {
+    background: #222;                 /* Sötét háttér */
+    color: white;                     /* Fehér szöveg */
+    text-align: center;               /* Középre igazítás */
+    padding: 1rem 0;                  /* Függőleges belső margó */
+    margin-top: 2rem;                 /* Felső margó */
+}
+
+/* --- ID és pszeudo-szelektor példa --- */
+#kapcsolat a:hover {
+    color: red;                       /* Hover esetén piros szöveg */
+    font-weight: bold;                /* Félkövér szöveg hover esetén */
+}
+
+/* --- Minden section formázása --- */
+main section {
+    padding: 20px;                    /* Belső margó */
+    background: white;                /* Fehér háttér */
+    margin: 20px;                     /* Külső margó */
+    border-radius: 8px;               /* Lekerekített sarkok */
+}
+
+/* --- Display és pozícionálás példa --- */
+nav, footer {
+    position: relative;               /* Relatív pozíció (alaphelyzet) */
+    display: block;                   /* Blokk típusú elem */
+}
