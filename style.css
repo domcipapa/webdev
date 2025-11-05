@@ -122,3 +122,12 @@ nav, footer {
     position: relative;               /* Relatív pozíció (alaphelyzet) */
     display: block;                   /* Blokk típusú elem */
 }
+
+/* test */
+.test {
+    text-align: center;
+}
+
+#maybe {
+    background-color: dimgray;
+}
