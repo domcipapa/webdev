@@ -1,81 +1,83 @@
-// ------------------------
-// 1. Év kiírása
-// ------------------------
+/* ============================================================
+   1. szamBeker() → bekér egy számot és létrehoz egy <select>
+   ============================================================ */
+function szamBeker() {
+    // Ask user for number
+    let szam = parseInt(prompt("Adj meg egy számot!"));
+
+    // Container we'll fill
+    let htmlKod = "<select id='valasztas'>";
+
+    // Create dropdown options 1..szam
+    for (let i = 1; i <= szam; i++) {
+        htmlKod += `<option value="${i}">Szám: ${i}</option>`;
+    }
+
+    htmlKod += "</select>";
+
+    // Insert into page
+    document.getElementById('lista').innerHTML = htmlKod;
+}
+
+
+/* ============================================================
+   2. kiolvas() → két szám beolvasása és művelet végrehajtása
+   ============================================================ */
+function kiolvas() {
+
+    // Convert input values to integers
+    let szam1 = parseInt(document.getElementById("op_1").value);
+    let szam2 = parseInt(document.getElementById("op_2").value);
+
+    // Ask for operator
+    let muvelet = prompt("Add meg a műveletet (+, -, *, /):");
+
+    let eredmeny;
+
+    switch (muvelet) {
+
+        case "+":
+            eredmeny = szam1 + szam2;
+            break;
+
+        case "-":
+            eredmeny = szam1 - szam2;
+            break;
+
+        case "*":
+            eredmeny = szam1 * szam2;
+            break;
+
+        case "/":
+            if (szam2 === 0) {
+                alert("0-val nem lehet osztani!");
+                return;  // stop the function
+            }
+            eredmeny = szam1 / szam2;
+            break;
+
+        default:
+            alert("Érvénytelen művelet!");
+            return;
+    }
+
+    // Print result on page
+    document.getElementById("calc_result").innerText =
+        "A művelet eredménye: " + eredmeny;
+}
+
+
+/* ============================================================
+   3. idotMutat() → év kiírása
+   ============================================================ */
 function idotMutat() {
-    let ev = new Date().getFullYear();
-    document.getElementById("datumido").innerText = "Jelenlegi év: " + ev;
+    // Create date object
+    let most = new Date();
+
+    // Extract current year
+    let ev = most.getFullYear();
+
+    // Display it
+    document.getElementById("datumido").innerText =
+        "Jelenlegi év: " + ev;
 }
-
-// ------------------------
-// 2. Számok bekérése
-// ------------------------
-function szamBekeres() {
-    let szamok = [];
-
-    for (let i = 0; i < 5; i++) {
-        let s = parseInt(prompt("Adj meg egy számot:"));
-        if (!isNaN(s)) {
-            szamok.push(s);
-        }
-    }
-
-    let osszeg = szamok.reduce((a, b) => a + b, 0);
-    let szorzat = szamok.reduce((a, b) => a * b, 1);
-
-    document.getElementById("eredmeny").innerHTML =
-        "Összeg: " + osszeg + "<br>Szorzat: " + szorzat;
-}
-
-// ------------------------
-// 3. Lista generálása
-// ------------------------
-function listazas() {
-    let n = parseInt(prompt("Meddig generáljak listát?"));
-    let lista = document.getElementById("lista");
-    lista.innerHTML = "";
-
-    if (isNaN(n) || n < 1) {
-        alert("Pozitív szám kell!");
-        return;
-    }
-
-    for (let i = 1; i <= n; i++) {
-        let opt = document.createElement("option");
-        opt.textContent = i;
-        lista.appendChild(opt);
-    }
-}
-
-// ------------------------
-// 4. Űrlap feldolgozás
-// ------------------------
-document.getElementById("userForm").addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    let nev = document.getElementById("name").value;
-    let jelszo = document.getElementById("password").value;
-    let nem = document.querySelector("input[name='gender']:checked").value;
-    let kor = document.getElementById("age").value;
-    let szul = document.getElementById("birthday").value;
-    let szin = document.getElementById("color").value;
-
-    let programozas = [];
-    if (document.getElementById("java").checked) programozas.push("Java");
-    if (document.getElementById("c").checked) programozas.push("C/C++");
-    if (document.getElementById("csharp").checked) programozas.push("C#");
-
-    let megj = document.getElementById("comment").value;
-
-    let txt = `
-        Név: ${nev}<br>
-        Jelszó: ${jelszo}<br>
-        Nem: ${nem}<br>
-        Kor kategória: ${kor}<br>
-        Születési dátum: ${szul}<br>
-        Kedvenc szín: ${szin}<br>
-        Programozási nyelvek: ${programozas.join(", ")}<br>
-        Megjegyzés: ${megj}
-    `;
-
-    document.getElementById("output").innerHTML = txt;
-});

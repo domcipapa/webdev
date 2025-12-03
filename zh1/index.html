@@ -1,84 +1,100 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-  <meta charset="UTF-8">
-  <title>Űrlap + JavaScript feladatok</title>
-  <script src="script.js" defer></script>
+    <meta charset="UTF-8">
+    <title>Példa oldal – JavaScript feladatok</title>
+
+    <!-- Link the external JavaScript file -->
+    <script src="main.js" defer></script>
 </head>
 
 <body>
 
-  <h2>Regisztrációs űrlap</h2>
+    <h1>Példa weboldal</h1>
 
-  <form id="userForm">
+    <!-- -------------------------------
+        1. Dynamic number select creator
+    --------------------------------- -->
+    <h2>1. Szám bekérése és legördülő lista generálása</h2>
 
-    <fieldset>
-      <legend>Személyes adatok</legend>
+    <!-- Button that calls szamBeker() -->
+    <button onclick="szamBeker()">Szám bekérése</button>
 
-      <p>Név:
-        <input id="name" type="text" name="name" required>
-      </p>
+    <!-- Here the generated <select> will appear -->
+    <div id="lista"></div>
 
-      <p>Jelszó:
-        <input id="password" type="password" name="password" minlength="8" required>
-      </p>
+    <hr>
 
-      <p>Nem:
-        <label><input type="radio" name="gender" value="férfi" checked> Férfi</label>
-        <label><input type="radio" name="gender" value="nő"> Nő</label>
-      </p>
+    <!-- ----------------------
+        2. Egyszerű számoló
+    ----------------------- -->
+    <h2>2. Két szám műveletének kiszámítása</h2>
 
-      <p>Kor:
-        <select id="age">
-          <option value="10">&lt; 10 év</option>
-          <option value="30">&lt; 30 év</option>
-          <option value="50">&ge; 30 év</option>
-        </select>
-      </p>
+    <label>Első szám: 
+        <input type="number" id="op_1">
+    </label><br>
 
-      <p>Születési dátum:
-        <input id="birthday" type="date">
-      </p>
+    <label>Második szám:
+        <input type="number" id="op_2">
+    </label><br>
 
-      <p>Kedvenc szín:
-        <input id="color" type="color" value="#4c79ff">
-      </p>
-    </fieldset>
+    <!-- Button calls kiolvas() -->
+    <button onclick="kiolvas()">Művelet elvégzése</button>
 
-    <fieldset>
-      <legend>Programozási nyelvek</legend>
+    <!-- Result appears here -->
+    <p id="calc_result"></p>
 
-      <label><input type="checkbox" id="java"> Java</label>
-      <label><input type="checkbox" id="c"> C/C++</label>
-      <label><input type="checkbox" id="csharp"> C#</label>
-    </fieldset>
+    <hr>
 
-    <fieldset>
-      <legend>Megjegyzés</legend>
-      <textarea id="comment" rows="4" cols="50"></textarea>
-    </fieldset>
+    <!-- ----------------------------
+        3. Egyszerű adatbekérő űrlap
+    ----------------------------- -->
+    <h2>3. Adatbekérő űrlap</h2>
 
-    <p>
-      <input type="submit" value="Küldés">
-      <input type="reset" value="Törlés">
-    </p>
-  </form>
+    <form>
+        <label>Név:
+            <input type="text" id="name" required>
+        </label><br>
 
-  <h3>Űrlap eredménye:</h3>
-  <div id="output"></div>
+        <label>Jelszó:
+            <input type="password" id="password" minlength="8" required>
+        </label><br>
 
-  <hr>
+        <label>Nem:
+            <input type="radio" name="gender" value="f" checked> Férfi
+            <input type="radio" name="gender" value="n"> Nő
+        </label><br>
 
-  <h2>JavaScript feladatok</h2>
+        <label>Kor:
+            <select id="age">
+                <option value="10">&lt; 10 év</option>
+                <option value="30">&lt; 30 év</option>
+                <option value="50">&ge; 30 év</option>
+            </select>
+        </label><br>
 
-  <button onclick="idotMutat()">Mutasd az évet</button>
-  <p id="datumido"></p>
+        <label>Születési dátum:
+            <input type="date" id="birthday">
+        </label><br>
 
-  <button onclick="szamBekeres()">Számok bekérése</button>
-  <p id="eredmeny"></p>
+        <label>Megjegyzés:
+            <textarea id="megjegyzes" rows="4" cols="40"></textarea>
+        </label><br>
 
-  <button onclick="listazas()">Lista generálása</button>
-  <select id="lista"></select>
+        <button type="submit">Küldés</button>
+        <button type="reset">Törlés</button>
+    </form>
+
+    <hr>
+
+    <!-- ---------------------------
+         4. Idő megjelenítő gomb
+    ---------------------------- -->
+    <h2>4. Idő / év megjelenítése</h2>
+
+    <button onclick="idotMutat()">Mutasd az évet!</button>
+
+    <p id="datumido"></p>
 
 </body>
 </html>
