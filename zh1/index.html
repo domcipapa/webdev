@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <title>Űrlap + JavaScript feladatok</title>
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+
+  <h2>Regisztrációs űrlap</h2>
+
+  <form id="userForm">
+
+    <fieldset>
+      <legend>Személyes adatok</legend>
+
+      <p>Név:
+        <input id="name" type="text" name="name" required>
+      </p>
+
+      <p>Jelszó:
+        <input id="password" type="password" name="password" minlength="8" required>
+      </p>
+
+      <p>Nem:
+        <label><input type="radio" name="gender" value="férfi" checked> Férfi</label>
+        <label><input type="radio" name="gender" value="nő"> Nő</label>
+      </p>
+
+      <p>Kor:
+        <select id="age">
+          <option value="10">&lt; 10 év</option>
+          <option value="30">&lt; 30 év</option>
+          <option value="50">&ge; 30 év</option>
+        </select>
+      </p>
+
+      <p>Születési dátum:
+        <input id="birthday" type="date">
+      </p>
+
+      <p>Kedvenc szín:
+        <input id="color" type="color" value="#4c79ff">
+      </p>
+    </fieldset>
+
+    <fieldset>
+      <legend>Programozási nyelvek</legend>
+
+      <label><input type="checkbox" id="java"> Java</label>
+      <label><input type="checkbox" id="c"> C/C++</label>
+      <label><input type="checkbox" id="csharp"> C#</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Megjegyzés</legend>
+      <textarea id="comment" rows="4" cols="50"></textarea>
+    </fieldset>
+
+    <p>
+      <input type="submit" value="Küldés">
+      <input type="reset" value="Törlés">
+    </p>
+  </form>
+
+  <h3>Űrlap eredménye:</h3>
+  <div id="output"></div>
+
+  <hr>
+
+  <h2>JavaScript feladatok</h2>
+
+  <button onclick="idotMutat()">Mutasd az évet</button>
+  <p id="datumido"></p>
+
+  <button onclick="szamBekeres()">Számok bekérése</button>
+  <p id="eredmeny"></p>
+
+  <button onclick="listazas()">Lista generálása</button>
+  <select id="lista"></select>
+
+</body>
+</html>
